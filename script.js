@@ -15,12 +15,12 @@ codes.forEach((code, index) => {
 
   code.addEventListener("keydown", (e) => {
 
-    if (e.key === "Backspace") {
+    if (e.key === "Backspace" && index > 0) {
 
-      if (code.value === "" && index > 0) {
-        codes[index - 1].value = "";
+      if(code.value === ""){
         codes[index - 1].focus();
       }
+
     }
 
   });
