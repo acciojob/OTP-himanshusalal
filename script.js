@@ -21,7 +21,6 @@ codes.forEach((code, index) => {
         codes[index - 1].value = "";
         codes[index - 1].focus();
       }
-
     }
 
   });
