@@ -1,24 +1,12 @@
 //your JS code here. If required.
-const codes = document.querySelectorAll(".code");
+code.addEventListener("input", (e) => {
+  let value = e.target.value;
 
-codes[0].focus();
+  if (value.length > 1) {
+    code.value = value[0];
+  }
 
-codes.forEach((code, index) => {
-
-  code.addEventListener("input", (e) => {
-
-    if (e.target.value && index < codes.length - 1) {
-      codes[index + 1].focus();
-    }
-
-  });
-
-  code.addEventListener("keydown", (e) => {
-
-    if (e.key === "Backspace" && index > 0 && code.value === "") {
-      codes[index - 1].focus();
-    }
-
-  });
-
+  if (value && index < codes.length - 1) {
+    codes[index + 1].focus();
+  }
 });
