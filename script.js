@@ -2,11 +2,14 @@
 code.addEventListener("input", (e) => {
   let value = e.target.value;
 
+  // allow only 1 digit
   if (value.length > 1) {
-    code.value = value[0];
+    value = value[0];
+    code.value = value;
   }
 
-  if (value && index < codes.length - 1) {
+  // move to next input
+  if (value !== "" && index < codes.length - 1) {
     codes[index + 1].focus();
   }
 });
