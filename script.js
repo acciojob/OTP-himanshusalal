@@ -13,16 +13,18 @@ codes.forEach((code, index) => {
 
   });
 
-  code.addEventListener("keydown", (e) => {
+ code.addEventListener("keydown", (e) => {
 
-    if (e.key === "Backspace" && index > 0) {
-
-      if(code.value === ""){
-        codes[index - 1].focus();
-      }
-
+  if (e.key === "Backspace") {
+    
+    if (code.value !== "") {
+      code.value = "";
+    } else if (index > 0) {
+      codes[index - 1].focus();
+      codes[index - 1].value = "";
     }
 
-  });
+  }
 
+});
 });
