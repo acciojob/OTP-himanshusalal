@@ -2,14 +2,17 @@
 code.addEventListener("input", (e) => {
   let value = e.target.value;
 
-  // allow only 1 digit
-  if (value.length > 1) {
-    value = value[0];
-    code.value = value;
-  }
+  // allow only digits
+  value = value.replace(/[^0-9]/g, "");
 
-  // move to next input
-  if (value !== "" && index < codes.length - 1) {
+  // keep only 1 digit
+  value = value.slice(0, 1);
+
+  code.value = value;
+
+  if (value && index < codes.length - 1) {
     codes[index + 1].focus();
+  }
+});[index + 1].focus();
   }
 });
